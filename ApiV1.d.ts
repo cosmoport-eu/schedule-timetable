@@ -71,7 +71,7 @@ export default class ApiV1 {
     fetchReferenceData: () => Promise<any>;
     createEventType: (data: any) => Promise<any>;
     deleteEventType: (id: any) => Promise<any>;
-    createEventTypeCategory: (name: string) => Promise<any>;
+    createEventTypeCategory: (data: any) => Promise<any>;
     fetchNodes: () => Promise<any>;
     fetchGates: () => Promise<any>;
     fetchTime: () => Promise<any>;

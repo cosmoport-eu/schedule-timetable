@@ -1,6 +1,6 @@
 {
   "name": "cosmoport-core-api-client",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "API for Cosmoport modules",
   "author": {
     "name": "Sergey Stepanov",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sergystepanov/cosmoport-core-api-client.git"
+    "url": "https://github.com/cosmoport-eu/schedule-core-api-client"
   },
   "main": "index.js",
   "types": "index.d.ts"
