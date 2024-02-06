@@ -130,6 +130,20 @@ export default class ApiV1 {
     createEventTypeCategory = (data) =>
         this.post('/t_events/types/categories', data);
 
+    // Facilities
+    fetchAllFacilities = () => this.get('/facility/all');
+    fetchFacilitiesByLocaleId = (localeId) => this.get(`/facility/${localeId}`);
+    createFacility = (localeId, data) => this.post(`/facility/${localeId}`, data);
+    updateFacility = (id, data) => this.post(`/facility/${id}`, data);
+    deleteFacility = (id) => this.delete(`/facility/${id}`);
+
+    // Materials
+    fetchAllMaterials = () => this.get('/material/all');
+    fetchMaterialsByLocaleId = (localeId) => this.get(`/material/${localeId}`);
+    createMaterial = (localeId, data) => this.post(`/material/${localeId}`, data);
+    updateMaterial = (id, data) => this.post(`/material/${id}`, data);
+    deleteMaterial = (id) => this.delete(`/material/${id}`);
+
     // Nodes
     fetchNodes = () => this.get('/nodes');
 

@@ -72,6 +72,19 @@ export default class ApiV1 {
     createEventType: (data: any) => Promise<any>;
     deleteEventType: (id: any) => Promise<any>;
     createEventTypeCategory: (data: any) => Promise<any>;
+
+    fetchAllFacilities = () => Promise<any>;
+    fetchFacilitiesByLocaleId = (localeId: any) => Promise<any>;
+    createFacility = (localeId: any, data: any) => Promise<any>;
+    updateFacility = (id: any, data: any) => Promise<any>;
+    deleteFacility = (id: any) => Promise<any>;
+
+    fetchAllMaterials = () => Promise<any>;
+    fetchMaterialsByLocaleId = (localeId: any) => Promise<any>;
+    createMaterial = (localeId: any, data: any) => Promise<any>;
+    updateMaterial = (id: any, data: any) => Promise<any>;
+    deleteMaterial = (id: any) => Promise<any>;
+
     fetchNodes: () => Promise<any>;
     fetchGates: () => Promise<any>;
     fetchTime: () => Promise<any>;
