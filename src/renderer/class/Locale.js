@@ -5,12 +5,11 @@ export default class Locale {
       return '';
     }
 
-    return Object.prototype.hasOwnProperty.call(locale, property)
+    return typeof locale[property] !== 'undefined'
       ? uppercase
         ? locale[property]
-          .values[0]
           .toUpperCase()
-        : locale[property].values[0]
+        : locale[property]
       : '';
   }
 }

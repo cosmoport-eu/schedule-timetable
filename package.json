@@ -1,9 +1,9 @@
 {
   "description": "Cosmoport Timetable",
-  "homepage": "https://github.com/sergystepanov/cosmoport-timetable",
+  "homepage": "https://github.com/cosmoport-eu/cosmoport-timetable",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sergystepanov/cosmoport-timetable.git"
+    "url": "git+https://github.com/cosmoport-eu/cosmoport-timetable.git"
   },
   "private": true,
   "author": {

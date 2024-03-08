@@ -130,17 +130,25 @@ export default class Main extends PureComponent {
     const { api } = this.state;
 
     Promise.all([
-      api.fetchReferenceData(),
+      api.get('/t_events/types?isActive=true'),
+      api.get('/category?localeId=1&isActive=true'),
+      api.get('/t_events/statuses'),
+      api.get('/t_events/states'),
       api.fetchTranslations(),
       api.fetchVisibleLocales(),
       api.fetchSettings(),
     ])
       .then((data) => {
         this.setState({
-          refData: data[0],
-          i18n: data[1],
-          locales: data[2],
-          settings: data[3],
+          refData: {
+            types: data[0],
+            typeCategories: data[1],
+            statuses: data[2],
+            states: data[3],
+          },
+          i18n: data[4],
+          locales: data[5],
+          settings: data[6],
         });
 
         return data[3];

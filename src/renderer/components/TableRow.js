@@ -57,48 +57,17 @@ export default class TableRow extends Component {
 
   renderDepartion = (minutes) => this.fade(_Date.minutesToHm(minutes));
 
-  renderTypeTitle(val, values) {
-    let result = val;
+  renderTypeTitle(val, refs) {
+    const type = refs.types.filter((t) => t.id === val);
+    const category = refs.typeCategories.filter((c) => c.id === type[0].categoryId);
 
-    for (const type of values.types) {
-      if (val === type.id) {
-        for (const cat of values.type_categories) {
-          if (cat.id === type.categoryId) {
-            result = this.renderPropAnimated(cat.i18nEventTypeCategoryName, ':');
-            break;
-          }
-        }
-        break;
-      }
-    }
-
-    return result;
+    return this.renderPropAnimated(this.props.locale[category[0].code], ':');
   }
 
-  renderTypeName(val, values) {
-    let result = val;
+  renderTypeName(val, refs) {
+    const type = refs.types.filter((t) => t.id === val);
 
-    for (const type of values.types) {
-      if (val === type.id) {
-        result = this.renderPropAnimated(type.i18nEventTypeName);
-        break;
-      }
-    }
-
-    return result;
-  }
-
-  renderDestination(val, values) {
-    let result = val;
-
-    for (const dest of values.destinations) {
-      if (val === dest.id) {
-        result = this.renderPropAnimated(dest.i18nEventDestinationName);
-        break;
-      }
-    }
-
-    return result;
+    return this.renderPropAnimated(this.props.locale[type[0].nameCode]);
   }
 
   renderDuration = (m) =>
@@ -110,25 +79,20 @@ export default class TableRow extends Component {
       )}`,
     );
 
-  renderStatus(val, values) {
+  renderStatus(val, refs) {
     if (val === 0) {
       return '';
     }
 
-    let result = val;
+    const status = refs.statuses.filter((s) => s.id === val);
 
-    for (const status of values.statuses) {
-      if (val === status.id) {
-        result = this.renderPropAnimated(status.i18nStatus);
-        break;
-      }
-    }
+    const result = this.renderPropAnimated(this.props.locale[status[0].code]);
 
     return <span>{result}</span>;
   }
 
   renderPropAnimated(name, postfix) {
-    let value = this.getLocaleProp(name);
+    let value = name;
     if (postfix) {
       value = value + postfix;
     }
@@ -192,9 +156,6 @@ export default class TableRow extends Component {
             </div>
 
             <Trapeze position="_right" />
-          </div>
-          <div className="voyage__direction">
-            {this.renderDestination(event.eventDestinationId, this.props.refs)}
           </div>
           <div className="voyage__price">{this.renderCost(event.cost)}</div>
           <div className="voyage__duration">

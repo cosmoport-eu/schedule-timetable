@@ -28,9 +28,6 @@ export default class TableHeader extends Component {
           <div className="head__type">
             {this.renderPropAnimated('ui_caption_type')}
           </div>
-          <div className="head__direction">
-            {this.renderPropAnimated('ui_caption_destination')}
-          </div>
           <div className="head__price">
             {this.renderPropAnimated('ui_caption_cost')}
           </div>
