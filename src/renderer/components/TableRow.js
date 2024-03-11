@@ -5,10 +5,11 @@ import Locale from '../class/Locale';
 import FadeProps from '../class/Fade';
 import _Date from '../class/_Date';
 
-const isEnded = (date, minutes) => {
+// если прошло 10 минут с начала мероприятия - true
+const isEnded = (date, startTimeInMinutes) => {
   const waitPeriod = 10;
 
-  return minutes <= waitPeriod + date.getHours() * 60 + date.getMinutes();
+  return startTimeInMinutes <= waitPeriod + date.getHours() * 60 + date.getMinutes();
 };
 
 export default class TableRow extends Component {
@@ -29,7 +30,7 @@ export default class TableRow extends Component {
     return Locale.getLocaleProp(prop, this.props.locale);
   }
 
-  mapStatus = (statusId, date, minutes) => {
+  mapStatus = (statusId, date, startTimeInMinutes) => {
     const map = {
       1: 'cancel',
       2: 'landing',
@@ -37,7 +38,8 @@ export default class TableRow extends Component {
       5: 'finish',
       6: 'pre-order',
     };
-    const ended = isEnded(date, minutes);
+
+    const ended = isEnded(date, startTimeInMinutes);
 
     return ended
       ? ' voyage--finish'
@@ -89,6 +91,18 @@ export default class TableRow extends Component {
     const result = this.renderPropAnimated(this.props.locale[status[0].code]);
 
     return <span>{result}</span>;
+  }
+
+  // иконка не отображается
+  renderState(state) {
+    if (state === 2) {
+      return <span
+        className="bp5-icon-lock"
+        style={{ fontSize: '.8em', color: '#5c7080' }}
+      />
+    }
+
+    return '';
   }
 
   renderPropAnimated(name, postfix) {
@@ -163,6 +177,12 @@ export default class TableRow extends Component {
           </div>
           <div className="voyage__status">
             {this.renderStatus(event.eventStatusId, this.props.refs)}
+          </div>
+          <div className="voyage__tickets">
+            <span>
+              {`${event.contestants}/${event.peopleLimit} `}
+              {this.renderState(event.eventStateId)}
+            </span>
           </div>
         </div>
 

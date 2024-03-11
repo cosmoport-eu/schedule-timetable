@@ -37,6 +37,9 @@ export default class TableHeader extends Component {
           <div className="head__status">
             {this.renderPropAnimated('ui_caption_status')}
           </div>
+          <div className="head__tickets">
+            {this.renderPropAnimated('ui_caption_tickets')}
+          </div>
         </div>
         <Trapeze position="_right" />
       </div>

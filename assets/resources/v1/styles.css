@@ -353,18 +353,7 @@ table{border-collapse:collapse;border-spacing:0}
 	        justify-content:center;margin-left:15px;}
 .voyage__type-miss{font-size:36px;color:#fff;}
 .voyage__type-title{font-size:30px;}
-.voyage__direction{position:relative;box-sizing:border-box;width:340px;padding-left:25px;display:-webkit-box;display:-ms-flexbox;display:flex;
-	-webkit-box-align:center;
-	    -ms-flex-align:center;
-	        align-items:center;font-size:32px;}
-.voyage__direction:before{top:36%;
-	-webkit-transform:rotate(55deg);
-	        transform:rotate(55deg);}
-.voyage__direction:after,.voyage__direction:before{position:absolute;right:0;content:"";width:25px;height:2px;background-color:var(--border);}
-.voyage__direction:after{bottom:36%;
-	-webkit-transform:rotate(-55deg);
-	        transform:rotate(-55deg);}
-.voyage__price{position:relative;box-sizing:border-box;width:160px;padding-left:20px;display:-webkit-box;display:-ms-flexbox;display:flex;
+.voyage__price{position:relative;box-sizing:border-box;width:195px;padding-left:20px;display:-webkit-box;display:-ms-flexbox;display:flex;
 	-webkit-box-align:center;
 	    -ms-flex-align:center;
 	        align-items:center;font-size:32px;}
@@ -385,6 +374,17 @@ table{border-collapse:collapse;border-spacing:0}
 	        transform:rotate(55deg);}
 .voyage__duration:after,.voyage__duration:before{position:absolute;right:0;content:"";width:25px;height:2px;background-color:var(--border);}
 .voyage__duration:after{bottom:36%;
+	-webkit-transform:rotate(-55deg);
+	        transform:rotate(-55deg);}
+.voyage__tickets{position:relative;box-sizing:border-box;width:300px;padding-left:30px;display:-webkit-box;display:-ms-flexbox;display:flex;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;font-size:32px;}
+.voyage__tickets:before{top:36%;
+	-webkit-transform:rotate(55deg);
+	        transform:rotate(55deg);}
+.voyage__tickets:after,.voyage__tickets:before{position:absolute;right:0;content:"";width:25px;height:2px;background-color:var(--border);}
+.voyage__tickets:after{bottom:36%;
 	-webkit-transform:rotate(-55deg);
 	        transform:rotate(-55deg);}
 .voyage__status{width:calc(100% - 1530px);
@@ -424,15 +424,7 @@ table{border-collapse:collapse;border-spacing:0}
 .head__type:after{bottom:-30%;
 	-webkit-transform:rotate(-55deg);
 	        transform:rotate(-55deg);}
-.head__direction{position:relative;box-sizing:border-box;width:340px;padding-left:25px;}
-.head__direction:before{top:-30%;
-	-webkit-transform:rotate(55deg);
-	        transform:rotate(55deg);}
-.head__direction:after,.head__direction:before{content:"";z-index:2;position:absolute;right:-2%;width:33px;height:2px;background-color:#0cf;}
-.head__direction:after{bottom:-30%;
-	-webkit-transform:rotate(-55deg);
-	        transform:rotate(-55deg);}
-.head__price{position:relative;box-sizing:border-box;width:160px;padding-left:10px;}
+.head__price{position:relative;box-sizing:border-box;width:195px;padding-left:10px;}
 .head__price:before{top:-30%;
 	-webkit-transform:rotate(55deg);
 	        transform:rotate(55deg);}
@@ -446,6 +438,14 @@ table{border-collapse:collapse;border-spacing:0}
 	        transform:rotate(55deg);}
 .head__duration:after,.head__duration:before{content:"";z-index:2;position:absolute;right:-2%;width:33px;height:2px;background-color:#0cf;}
 .head__duration:after{bottom:-30%;
+	-webkit-transform:rotate(-55deg);
+	        transform:rotate(-55deg);}
+.head__tickets{position:relative;box-sizing:border-box;width:300px;padding-left:35px;}
+.head__tickets:before{top:-30%;
+	-webkit-transform:rotate(55deg);
+	        transform:rotate(55deg);}
+.head__tickets:after,.head__tickets:before{content:"";z-index:2;position:absolute;right:-2%;width:33px;height:2px;background-color:#0cf;}
+.head__tickets:after{bottom:-30%;
 	-webkit-transform:rotate(-55deg);
 	        transform:rotate(-55deg);}
 .head__status{position:relative;box-sizing:border-box;text-align:center;width:calc(100% - 1530px);}
