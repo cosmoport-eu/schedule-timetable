@@ -58,6 +58,12 @@ export default class MenuBuilder {
             },
           },
           {
+            label: '10% zoom',
+            click() {
+              w.webContents.setZoomLevel(-6);
+            },
+          },
+          {
             label: '100% zoom',
             click() {
               w.webContents.setZoomLevel(0);
