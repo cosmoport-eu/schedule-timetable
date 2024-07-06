@@ -115,8 +115,7 @@ export default class ApiV1 {
     fetchTranslations = () => this.get('/translations');
     fetchTranslationsForLocale = (localeId) =>
         this.get(`/translations/localeId=${localeId}`);
-    updateTranslationTextForId = (id, value) =>
-        this.post(`/translations/update/${id}`, value);
+    updateTranslationTextForId = (id, value) => this.post(`/translations/update/${id}`, value);
     fetchLocales = () => this.get('/translations/locales');
     fetchVisibleLocales = () => this.get('/translations/locales/visible');
     createLocale = (data) => this.post('/translations/locale', data);
@@ -135,6 +134,7 @@ export default class ApiV1 {
     fetchFacilitiesByLocaleId = (localeId) => this.get(`/facility/${localeId}`);
     createFacility = (localeId, data) => this.post(`/facility/${localeId}`, data);
     updateFacility = (id, data) => this.post(`/facility/${id}`, data);
+    updateFacilityIcon = (id, data) => this.post(`/facility/${id}/icon`, data);
     deleteFacility = (id) => this.delete(`/facility/${id}`);
 
     // Materials
@@ -142,6 +142,7 @@ export default class ApiV1 {
     fetchMaterialsByLocaleId = (localeId) => this.get(`/material/${localeId}`);
     createMaterial = (localeId, data) => this.post(`/material/${localeId}`, data);
     updateMaterial = (id, data) => this.post(`/material/${id}`, data);
+    updateMaterialIcon = (id, data) => this.post(`/material/${id}/icon`, data);
     deleteMaterial = (id) => this.delete(`/material/${id}`);
 
     // Nodes
