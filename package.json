@@ -1,6 +1,6 @@
 {
   "name": "cosmoport-core-api-client",
-  "version": "0.2.5",
+  "version": "0.2.7",
   "description": "API for Cosmoport modules",
   "author": {
     "name": "Sergey Stepanov",
